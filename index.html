@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Encontre Visconde: catálogo escolar de objetos achados e perdidos.">
+  <title>Encontra Visconde</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/app.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="Encontra Visconde - início"><span class="brand-mark">EV</span><span>Encontra <b>Visconde</b><small>Achados e perdidos escolar</small></span></a>
+    <nav class="nav" aria-label="Navegação principal">
+      <a href="#inicio">Início</a><a href="#objetos">Objetos</a><a href="#como-funciona">Como funciona</a>
+    </nav>
+    <div class="nav-actions"><button class="btn btn-light" id="loginBtn">Entrar</button><button class="btn btn-primary" id="registerBtn">Criar conta</button><button class="menu-btn" id="menuBtn" aria-label="Abrir menu">☰</button></div>
+  </header>
+
+  <main id="inicio">
+    <section class="hero">
+      <div class="hero-copy"><span class="eyebrow">COLÉGIO ESTADUAL VISCONDE DE GUARAPUAVA</span><h1>Perdeu alguma coisa?<br><em>Vamos encontrar.</em></h1><p>Consulte os objetos encontrados no colégio e solicite a retirada de forma simples e organizada.</p><a class="btn btn-primary btn-large" href="#objetos">Procurar um objeto <span aria-hidden="true">→</span></a></div>
+      <div class="hero-art" aria-hidden="true"><div class="art-circle"></div><div class="art-card art-card-one">🎒 <span>Mochila</span></div><div class="art-card art-card-two">📚 <span>Caderno</span></div><div class="art-card art-card-three">🔑 <span>Chaves</span></div><div class="art-note">Pequenas coisas<br>merecem ser encontradas.</div></div>
+    </section>
+
+    <section class="search-section" id="objetos">
+      <div><span class="eyebrow">CATÁLOGO</span><h2>O que você está procurando?</h2><p class="muted">Pesquise pelo nome ou filtre por categoria.</p></div>
+      <div class="search-row"><label class="searchbox"><span aria-hidden="true">⌕</span><input id="searchInput" type="search" placeholder="Ex.: garrafa azul, estojo, uniforme..." aria-label="Pesquisar objetos"></label><select id="categoryFilter" aria-label="Filtrar por categoria"><option value="Todas">Todas as categorias</option><option>Material escolar</option><option>Acessórios pessoais</option><option>Eletrônicos</option><option>Roupas e uniformes</option><option>Outros</option></select></div>
+      <div class="filter-row"><div class="chips" id="categoryChips"><button class="chip active" data-category="Todas">Todos</button><button class="chip" data-category="Material escolar">Material escolar</button><button class="chip" data-category="Acessórios pessoais">Acessórios pessoais</button><button class="chip" data-category="Eletrônicos">Eletrônicos</button><button class="chip" data-category="Roupas e uniformes">Roupas e uniformes</button></div><span class="results-count" id="resultsCount" aria-live="polite"></span></div>
+      <div class="items-grid" id="itemsGrid"></div>
+      <div class="empty-state hidden" id="emptyState"><span>🔎</span><h3>Nenhum objeto encontrado</h3><p>Tente outro termo ou selecione uma categoria diferente.</p></div>
+    </section>
+
+    <section class="how-section" id="como-funciona"><div><span class="eyebrow">SIMPLES ASSIM</span><h2>Como funciona?</h2></div><div class="steps"><article><span>01</span><h3>Pesquise</h3><p>Encontre no catálogo o objeto que pode ser seu.</p></article><article><span>02</span><h3>Confira</h3><p>Veja as informações e confirme os detalhes do item.</p></article><article><span>03</span><h3>Solicite</h3><p>Gere seu código e apresente-o à inspetoria para conferência.</p></article></div></section>
+
+    <section class="found-cta"><div><span class="eyebrow">AJUDE A COMUNIDADE</span><h2>Encontrou algum objeto?</h2><p>Cadastre as informações para que o dono possa localizar.</p></div><button class="btn btn-white" id="addItemBtn">Cadastrar objeto encontrado <span>→</span></button></section>
+  </main>
+
+  <footer><a class="brand brand-footer" href="#"><span class="brand-mark">EV</span><span>Encontra <b>Visconde</b><small>Mais organização para encontrar e devolver.</small></span></a><span>Projeto escolar • Colégio Estadual Visconde de Guarapuava</span></footer>
+
+  <dialog id="appDialog" class="dialog"><div class="dialog-head"><div><span class="eyebrow" id="dialogEyebrow">ENCONTRA VISCONDE</span><h2 id="dialogTitle">Acessar</h2></div><button class="icon-btn" id="closeDialog" aria-label="Fechar">×</button></div><div id="dialogContent"></div></dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
